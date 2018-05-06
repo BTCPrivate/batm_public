@@ -46,6 +46,7 @@ public class Currencies {
     public static final String TKN = "TKN";
     public static final String WDC = "WDC";
     public static final String XMR = "XMR";
+    public static final String BTCP = "BTCP";
 
     public static final String CAD = "CAD";
     public static final String CHF = "CHF";
@@ -59,6 +60,7 @@ public class Currencies {
     public static final String USD = "USD";
     public static final String XAF = "XAF";
     public static final String XAU = "XAU"; //gold
+
     public static final String NONE = "";
 
     public static final List<String> FIAT_CURRENCIES;
@@ -89,6 +91,7 @@ public class Currencies {
         crypto.add(TKN);
         crypto.add(WDC);
         crypto.add(XMR);
+        crypto.add(BTCP);
         CRYPTO_CURRENCIES = Collections.unmodifiableList(crypto);
 
         List<String> fiat = new ArrayList<>();
