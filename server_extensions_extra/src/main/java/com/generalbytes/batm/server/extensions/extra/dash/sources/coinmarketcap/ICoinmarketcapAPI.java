@@ -20,6 +20,8 @@ package com.generalbytes.batm.server.extensions.extra.dash.sources.coinmarketcap
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+// TODO - CMC API /v2/ only supported after Nov30 2018
+// Citation - https://coinmarketcap.com/api/
 @Path("/v1/ticker")
 @Produces(MediaType.APPLICATION_JSON)
 public interface ICoinmarketcapAPI {
@@ -29,5 +31,5 @@ public interface ICoinmarketcapAPI {
 
     @GET
     @Path("/{cryptoToGet}/?convert={convert}")
-    CMCTicker[]  getTickers(@PathParam("cryptoToGet") String cryptoToGet,@QueryParam("convert") String fiatCurrency);
+    CMCTicker[]  getTickers(@PathParam("cryptoToGet") String cryptoToGet, @QueryParam("convert") String fiatCurrency);
 }

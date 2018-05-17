@@ -19,6 +19,15 @@
                 <param name="accountname" />
                 <cryptocurrency>BCH</cryptocurrency>
             </wallet>
+            <wallet prefix="btcpd" name="Bitcoin Private Core - btcpd" >
+                <param name="protocol" />
+                <param name="user" />
+                <param name="password" />
+                <param name="host" />
+                <param name="port" />
+                <param name="accountname" />
+                <cryptocurrency>BTCP</cryptocurrency>
+            </wallet>
             <wallet prefix="coinkite" name="Coinkite.com Wallet" >
                 <param name="apikey" />
                 <param name="apisecret" />
@@ -58,6 +67,7 @@
                 <param name="fiatcurrency" />
                 <cryptocurrency>BTC</cryptocurrency>
                 <cryptocurrency>BCH</cryptocurrency>
+                <cryptocurrency>BTCP</cryptocurrency>
                 <cryptocurrency>LTC</cryptocurrency>
                 <cryptocurrency>ETH</cryptocurrency>
                 <cryptocurrency>DASH</cryptocurrency>
@@ -90,6 +100,26 @@
                 <cryptocurrency>BTC</cryptocurrency>
             </exchange>
             <cryptologo cryptocurrency="BTC" file="btc.png"/>
+    </extension>
+	<extension class="com.generalbytes.batm.server.extensions.extra.bitcoinprivate.BitcoinprivateExtension" >
+        <wallet prefix="btcpd" name="Btcpd">
+            <param name="protocol" />
+            <param name="user" />
+            <param name="password" />
+            <param name="host" />
+            <param name="port" />
+            <param name="accountname" />
+            <cryptocurrency>BTCP</cryptocurrency>
+        </wallet>
+        <ratesource prefix="coinmarketcap" name ="coinmarketcap.com" >
+            <param name="fiatcurrency" />
+            <cryptocurrency>BTCP</cryptocurrency>
+        </ratesource>
+        <ratesource prefix="btcpfix" name ="Fix Price" >
+            <param name="price" />
+            <cryptocurrency>BTCP</cryptocurrency>
+        </ratesource>
+        <cryptologo cryptocurrency="BTCP" file="btcp.png"/>
     </extension>
     <extension class="com.generalbytes.batm.server.extensions.extra.dogecoin.DogecoinExtension">
         <wallet prefix="blockio" name="Block.io Wallet">
