@@ -27,6 +27,9 @@ public class CoinmarketcapRateSource implements IRateSource {
         if (Currencies.USD.equalsIgnoreCase(preferedFiatCurrency)) {
             this.preferredFiatCurrency = Currencies.USD;
         }
+        if (Currencies.CAD.equalsIgnoreCase(preferedFiatCurrency)) {
+            this.preferredFiatCurrency = Currencies.CAD;
+        }
     }
 
     public CoinmarketcapRateSource() {
@@ -38,6 +41,7 @@ public class CoinmarketcapRateSource implements IRateSource {
         Set<String> result = new HashSet<String>();
         result.add(Currencies.BTC);
         result.add(Currencies.BCH);
+        result.add(Currencies.BTCP);
         result.add(Currencies.BTX);
         result.add(Currencies.LTC);
         result.add(Currencies.ETH);
@@ -52,6 +56,7 @@ public class CoinmarketcapRateSource implements IRateSource {
     @Override
     public Set<String> getFiatCurrencies() {
         Set<String> result = new HashSet<String>();
+        result.add(Currencies.CAD);
         result.add(Currencies.USD);
         result.add(Currencies.EUR);
         return result;
@@ -70,9 +75,9 @@ public class CoinmarketcapRateSource implements IRateSource {
             return null;
         }
         CMCTicker[] tickers;
-        if(Currencies.FLASH.equalsIgnoreCase(cryptoCurrency)){
+        if (Currencies.FLASH.equalsIgnoreCase(cryptoCurrency)) {
             tickers = api.getTickers(cryptoCurrency,fiatCurrency);
-        }else
+        } else
             tickers = api.getTickers(fiatCurrency);
 
         for (int i = 0; i < tickers.length; i++) {
@@ -80,7 +85,9 @@ public class CoinmarketcapRateSource implements IRateSource {
             if (cryptoCurrency.equalsIgnoreCase(ticker.getSymbol())) {
                 if (Currencies.EUR.equalsIgnoreCase(fiatCurrency)) {
                     return ticker.getPrice_eur();
-                }else{
+                } else if (Currencies.CAD.equalsIgnoreCase(fiatCurrency)) {
+                    return ticker.getPrice_cad();
+                } else if (Currencies.USD.equalsIgnoreCase(fiatCurrency)) {
                     return ticker.getPrice_usd();
                 }
             }

@@ -25,6 +25,7 @@ import java.util.List;
 public class Currencies {
     public static final String BTC = "BTC";
     public static final String BCH = "BCH"; //Bitcoin Cash
+    public static final String BTCP = "BTCP"; // Bitcoin Private
     public static final String BTX = "BTX"; //BitCore
     public static final String ETH = "ETH";
     public static final String LTC = "LTC";
@@ -47,7 +48,6 @@ public class Currencies {
     public static final String TKN = "TKN";
     public static final String WDC = "WDC";
     public static final String XMR = "XMR";
-    public static final String BTCP = "BTCP";
 
     public static final String CAD = "CAD";
     public static final String CHF = "CHF";
@@ -71,6 +71,7 @@ public class Currencies {
         List<String> crypto = new ArrayList<>();
         crypto.add(BTC);
         crypto.add(BCH);
+        crypto.add(BTCP);
         crypto.add(BTX);
         crypto.add(ETH);
         crypto.add(LTC);
@@ -93,7 +94,6 @@ public class Currencies {
         crypto.add(TKN);
         crypto.add(WDC);
         crypto.add(XMR);
-        crypto.add(BTCP);
         CRYPTO_CURRENCIES = Collections.unmodifiableList(crypto);
 
         List<String> fiat = new ArrayList<>();
