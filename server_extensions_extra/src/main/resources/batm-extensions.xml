@@ -19,6 +19,15 @@
                 <param name="accountname" />
                 <cryptocurrency>BCH</cryptocurrency>
             </wallet>
+            <wallet prefix="btcpd" name="Bitcoin Private Core - btcpd" >
+                <param name="protocol" />
+                <param name="user" />
+                <param name="password" />
+                <param name="host" />
+                <param name="port" />
+                <param name="accountname" />
+                <cryptocurrency>BTCP</cryptocurrency>
+            </wallet>
             <wallet prefix="coinkite" name="Coinkite.com Wallet" >
                 <param name="apikey" />
                 <param name="apisecret" />
@@ -59,6 +68,7 @@
                 <cryptocurrency>BTC</cryptocurrency>
                 <cryptocurrency>SYS</cryptocurrency>
                 <cryptocurrency>BCH</cryptocurrency>
+                <cryptocurrency>BTCP</cryptocurrency>
                 <cryptocurrency>LTC</cryptocurrency>
                 <cryptocurrency>ETH</cryptocurrency>
                 <cryptocurrency>DASH</cryptocurrency>

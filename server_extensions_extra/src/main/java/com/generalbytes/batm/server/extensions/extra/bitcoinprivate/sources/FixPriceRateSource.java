@@ -1,7 +1,6 @@
 package com.generalbytes.batm.server.extensions.extra.bitcoinprivate.sources;
 
 import com.generalbytes.batm.server.extensions.Currencies;
-
 import com.generalbytes.batm.server.extensions.IRateSource;
 
 import java.math.BigDecimal;
@@ -16,13 +15,16 @@ public class FixPriceRateSource implements IRateSource {
 
     private String preferedFiatCurrency = Currencies.USD;
 
-    public FixPriceRateSource(BigDecimal rate,String preferedFiatCurrency) {
+    public FixPriceRateSource(BigDecimal rate, String preferedFiatCurrency) {
         this.rate = rate;
         if (Currencies.EUR.equalsIgnoreCase(preferedFiatCurrency)) {
             this.preferedFiatCurrency = Currencies.EUR;
         }
         if (Currencies.USD.equalsIgnoreCase(preferedFiatCurrency)) {
             this.preferedFiatCurrency = Currencies.USD;
+        }
+        if (Currencies.CAD.equalsIgnoreCase(preferedFiatCurrency)) {
+            this.preferedFiatCurrency = Currencies.CAD;
         }
     }
 
@@ -44,8 +46,9 @@ public class FixPriceRateSource implements IRateSource {
     @Override
     public Set<String> getFiatCurrencies() {
         Set<String> result = new HashSet<>();
-        result.add(Currencies.USD);
         result.add(Currencies.EUR);
+        result.add(Currencies.USD);
+        result.add(Currencies.CAD);
         return result;
     }
 
@@ -53,4 +56,5 @@ public class FixPriceRateSource implements IRateSource {
     public String getPreferredFiatCurrency() {
         return preferedFiatCurrency;
     }
+
 }

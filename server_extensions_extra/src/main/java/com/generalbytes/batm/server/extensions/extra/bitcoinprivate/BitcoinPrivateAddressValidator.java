@@ -10,7 +10,11 @@ import com.generalbytes.batm.server.extensions.ICryptoAddressValidator;
 public class BitcoinPrivateAddressValidator implements ICryptoAddressValidator {
     @Override
     public boolean isAddressValid(String address) {
-        if (address.startsWith("b1") || address.startsWith("bx") || address.startsWith("zk")) {
+
+        //TODO - z addrs
+        //TODO - add+test support for BTC style (1,3) and ZCL style (t1, t3) addrs
+
+        if (address.startsWith("b1") || address.startsWith("b3")) {
             try {
                 Base58.decodeToBigInteger(address);
                 Base58.decodeChecked(address);
@@ -19,7 +23,7 @@ public class BitcoinPrivateAddressValidator implements ICryptoAddressValidator {
                 return false;
             }
             return true;
-        }else{
+        } else {
             return false;
         }
     }

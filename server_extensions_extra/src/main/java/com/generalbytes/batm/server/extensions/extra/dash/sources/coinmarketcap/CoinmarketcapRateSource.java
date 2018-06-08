@@ -31,6 +31,7 @@ public class CoinmarketcapRateSource implements IRateSource {
         if (Currencies.CAD.equalsIgnoreCase(preferedFiatCurrency)) {
             this.preferredFiatCurrency = Currencies.CAD;
         }
+        
         coinIDs.put(Currencies.BTC, 1);
         coinIDs.put(Currencies.SYS, 541);
         coinIDs.put(Currencies.BCH, 1831);
@@ -54,6 +55,7 @@ public class CoinmarketcapRateSource implements IRateSource {
         result.add(Currencies.BTC);
         result.add(Currencies.SYS);
         result.add(Currencies.BCH);
+        result.add(Currencies.BTCP);
         result.add(Currencies.BTX);
         result.add(Currencies.LTC);
         result.add(Currencies.ETH);
@@ -69,8 +71,8 @@ public class CoinmarketcapRateSource implements IRateSource {
     @Override
     public Set<String> getFiatCurrencies() {
         Set<String> result = new HashSet<String>();
-        result.add(Currencies.USD);
         result.add(Currencies.CAD);
+        result.add(Currencies.USD);
         result.add(Currencies.EUR);
         return result;
     }

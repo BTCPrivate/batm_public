@@ -18,6 +18,9 @@ public class FixPriceRateSource implements IRateSource {
 
     public FixPriceRateSource(BigDecimal rate,String preferedFiatCurrency) {
         this.rate = rate;
+        if (Currencies.CAD.equalsIgnoreCase(preferedFiatCurrency)) {
+            this.preferedFiatCurrency = Currencies.CAD;
+        }
         if (Currencies.EUR.equalsIgnoreCase(preferedFiatCurrency)) {
             this.preferedFiatCurrency = Currencies.EUR;
         }
@@ -44,6 +47,7 @@ public class FixPriceRateSource implements IRateSource {
     @Override
     public Set<String> getFiatCurrencies() {
         Set<String> result = new HashSet<String>();
+        result.add(Currencies.CAD);
         result.add(Currencies.USD);
         result.add(Currencies.EUR);
         return result;
