@@ -66,6 +66,7 @@
             <ratesource prefix="coinmarketcap" name ="CoinMarketCap.com" >
                 <param name="fiatcurrency" />
                 <cryptocurrency>BTC</cryptocurrency>
+                <cryptocurrency>SYS</cryptocurrency>
                 <cryptocurrency>BCH</cryptocurrency>
                 <cryptocurrency>BTCP</cryptocurrency>
                 <cryptocurrency>LTC</cryptocurrency>
@@ -169,10 +170,6 @@
             <cryptocurrency>FLASH</cryptocurrency>
             <cryptocurrency>BTC</cryptocurrency>
         </ratesource>
-        <!--ratesource prefix="coinmarketcap" name ="coinmarketcap.com" >
-            <param name="fiatcurrency" />
-            <cryptocurrency>FLASH</cryptocurrency>
-        </ratesource-->
         <ratesource prefix="flashfix" name ="Fix Price" >
             <param name="price" />
             <cryptocurrency>FLASH</cryptocurrency>
@@ -256,6 +253,22 @@
             <cryptocurrency>DASH</cryptocurrency>
         </ratesource>
         <cryptologo cryptocurrency="DASH" file="dash.png"/>
+    </extension>
+    <extension class="com.generalbytes.batm.server.extensions.extra.syscoin.SyscoinExtension" >
+    <wallet prefix="syscoind" name="syscoind">
+      <param name="protocol" />
+      <param name="user" />
+      <param name="password" />
+      <param name="host" />
+      <param name="port" />
+      <param name="accountname" />
+      <cryptocurrency>SYS</cryptocurrency>
+    </wallet>
+    <ratesource prefix="syscoinfix" name ="Fix Price" >
+      <param name="price" />
+      <cryptocurrency>SYS</cryptocurrency>
+    </ratesource>
+    <cryptologo cryptocurrency="SYS" file="sys.png"/>
     </extension>
     <extension class="com.generalbytes.batm.server.extensions.extra.digibyte.DigiByteExtension" >
         <wallet prefix="digibyted" name="Digibyted">
@@ -444,10 +457,6 @@
             <param name="price" />
             <cryptocurrency>POT</cryptocurrency>
         </ratesource>
-        <ratesource prefix="coinmarketcap" name ="coinmarketcap.com" >
-            <param name="fiatcurrency" />
-            <cryptocurrency>POT</cryptocurrency>
-        </ratesource>
         <cryptologo cryptocurrency="POT" file="pot.png"/>
     </extension>
     <extension class="com.generalbytes.batm.server.extensions.extra.dexacoin.DexCoinSupport">
@@ -477,10 +486,6 @@
             <param name="accountname" />
             <cryptocurrency>BTX</cryptocurrency>
         </wallet>
-        <ratesource prefix="coinmarketcap" name ="coinmarketcap.com" >
-            <param name="fiatcurrency" />
-            <cryptocurrency>BTX</cryptocurrency>
-        </ratesource>
         <ratesource prefix="btxfix" name ="Fix Price" >
             <param name="price" />
             <cryptocurrency>BTX</cryptocurrency>
@@ -488,4 +493,23 @@
         <cryptologo cryptocurrency="BTX" file="btx.png"/>
     </extension>
     <extension class="com.generalbytes.batm.server.extensions.extra.watchlists.BasicWatchlistsExtension" />
+    <extension class="com.generalbytes.batm.server.extensions.extra.futurocoin.FuturocoinExtension" >
+        <wallet prefix="futurocoind" name="Futurocoind">
+            <param name="protocol" />
+            <param name="user" />
+            <param name="password" />
+            <param name="host" />
+            <param name="port" />
+            <param name="accountname" />
+            <cryptocurrency>FTO</cryptocurrency>
+        </wallet>
+        <ratesource prefix="yobit" name="Yobit" >
+            <cryptocurrency>FTO</cryptocurrency>
+        </ratesource>
+        <ratesource prefix="ftofix" name ="Fix Price" >
+            <param name="price" />
+            <cryptocurrency>FTO</cryptocurrency>
+        </ratesource>
+        <cryptologo cryptocurrency="FTO" file="fto.png"/>
+    </extension>
 </extensions>
